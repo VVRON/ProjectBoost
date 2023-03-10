@@ -308,9 +308,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1242389051921748103, guid: 60a61ad53d32c45dab69d3827140407c, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242389052033383207, guid: 60a61ad53d32c45dab69d3827140407c, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 1242389053002589369, guid: 60a61ad53d32c45dab69d3827140407c, type: 3}
       propertyPath: m_Name
       value: Pads
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242389053002589369, guid: 60a61ad53d32c45dab69d3827140407c, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
       objectReference: {fileID: 0}
     - target: {fileID: 1242389053002589374, guid: 60a61ad53d32c45dab69d3827140407c, type: 3}
       propertyPath: m_RootOrder
@@ -470,6 +482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PLAYER
       objectReference: {fileID: 0}
+    - target: {fileID: 5162862702178452814, guid: 9ac7e93474a7145169118e510b02ceaa, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 5162862702460507264, guid: 9ac7e93474a7145169118e510b02ceaa, type: 3}
       propertyPath: m_Drag
       value: 0.25
@@ -487,6 +503,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2445856245954722498, guid: 4ad9a865f5a384c8db5d814853b43057, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9204190173040230856, guid: 4ad9a865f5a384c8db5d814853b43057, type: 3}
       propertyPath: m_Name
       value: Obstacles

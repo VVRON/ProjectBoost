@@ -3,12 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Movement : MonoBehaviour
 {
-    Rigidbody rb;
-    AudioSource audioSource;
+    //parameters
     [SerializeField] float mainThrust = 5f;
     [SerializeField] float rotationThrust = 5f;
+    [SerializeField] AudioClip mainEngine; 
+
+    //cache
+    Rigidbody rb;
+    AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +27,11 @@ public class Movement : MonoBehaviour
     {
         ProcessThrust();
         ProcessRotation();
+        
     }
 
+    // hold space key down to move rocket along y axis (frame rate independent)
+    // plays audio when key is held if no audio source is currently playing
     private void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -32,7 +40,7 @@ public class Movement : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             }
         }
         else
@@ -42,6 +50,8 @@ public class Movement : MonoBehaviour
 
     }
 
+
+    // hold down input keys to rotate forward or backwards along z axis
     private void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.D))
@@ -55,6 +65,9 @@ public class Movement : MonoBehaviour
         
     }
 
+    // rotate forward along z axis
+    // turn off/on rigid body freeze rotation
+    // frame rate independent
     void ForwardRotation(float rotateThisFrame)
     {
         rb.freezeRotation = true; // freezing rotation so we can manually rotate;
@@ -62,6 +75,9 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false; // unfreezing rotation so physics system can take over;
     }
 
+    // rotate backwards along z axis
+    // turn off/on rigid body freeze rotation
+    // frame rate independent
     void BackwardsRotation(float rotateThisFrame)
     {
         rb.freezeRotation = true; // freezing rotation so we can manually rotate;
